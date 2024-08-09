@@ -1,0 +1,130 @@
+1. Select All Data from a Table
+   
+   SELECT * FROM students;
+Retrieves all columns and rows from the `students` table.
+
+
+2. Select Specific Columns
+   
+   SELECT first_name, last_name FROM students;
+Retrieves only the `first_name` and `last_name` columns from the `students` table.
+
+
+3. Filter Results with WHERE
+   
+   SELECT * FROM students WHERE age > 15;
+Retrieves all students older than 15.
+
+
+4. Sort Results with ORDER BY
+   
+   SELECT * FROM students ORDER BY last_name;
+Retrieves all students sorted alphabetically by their `last_name`.
+
+
+5. Limit Results with LIMIT
+   
+   SELECT * FROM students LIMIT 5;
+Retrieves only the first 5 rows from the `students` table.
+
+
+6. Count Rows
+   
+   SELECT COUNT(*) FROM students;
+Counts the total number of students.
+
+
+7. Find Maximum Value
+   
+   SELECT MAX(age) FROM students;
+Finds the oldest student’s age.
+
+
+8. Find Minimum Value
+   
+   SELECT MIN(age) FROM students;
+ Finds the youngest student’s age.
+
+
+9. Calculate Average Value
+   
+   SELECT AVG(age) FROM students;
+ Calculates the average age of all students.
+
+
+10. Sum Values
+    
+    SELECT SUM(age) FROM students;
+Adds up the ages of all students.
+
+
+11. Group Data
+    
+    SELECT grade, COUNT(*) FROM students GROUP BY grade;
+Counts the number of students in each grade.
+
+
+12. Filter Grouped Data with HAVING
+    
+    SELECT grade, COUNT(*) FROM students GROUP BY grade HAVING COUNT(*) > 5;
+Shows grades with more than 5 students.
+
+
+13. Join Tables (Inner Join)
+    
+    SELECT students.first_name, courses.course_name
+    FROM students
+    INNER JOIN enrollments ON students.id = enrollments.student_id
+    INNER JOIN courses ON enrollments.course_id = courses.id;
+Retrieves students and their enrolled courses by joining three tables.
+
+
+14. Left Join
+    
+    SELECT students.first_name, courses.course_name
+    FROM students
+    LEFT JOIN enrollments ON students.id = enrollments.student_id
+    LEFT JOIN courses ON enrollments.course_id = courses.id;
+Retrieves all students and their courses, including students not enrolled in any courses.
+
+
+15. Update Data
+    
+    UPDATE students SET age = age + 1 WHERE birth_year = 2008;
+Increases the age of students born in 2008 by 1 year.
+
+
+16. Delete Data
+    
+    DELETE FROM students WHERE age < 12;
+Deletes students younger than 12.
+
+
+17. Insert New Data
+    
+    INSERT INTO students (first_name, last_name, age, grade)
+    VALUES ('John', 'Doe', 15, '10th');
+Adds a new student with specified details.
+
+
+18. Create a Table
+    
+    CREATE TABLE teachers (
+        id INT PRIMARY KEY,
+        first_name VARCHAR(50),
+        last_name VARCHAR(50),
+        subject VARCHAR(50)
+    );
+Creates a new table named `teachers` with columns for ID, first name, last name, and subject.
+
+
+19. Alter a Table
+    
+    ALTER TABLE students ADD COLUMN email VARCHAR(100);
+Adds a new column named `email` to the `students` table.
+
+
+20. Drop a Table
+    
+    DROP TABLE teachers;
+Deletes the entire `teachers` table.
